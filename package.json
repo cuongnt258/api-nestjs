@@ -21,6 +21,7 @@
 		"vercel-build": "yarn global add node-gyp"
 	},
 	"dependencies": {
+		"@mapbox/node-pre-gyp": "^1.0.10",
 		"@nestjs/common": "^6.0.0",
 		"@nestjs/core": "^6.0.0",
 		"@nestjs/jwt": "^6.1.1",
