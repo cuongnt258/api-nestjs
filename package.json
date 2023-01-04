@@ -4,15 +4,16 @@
 	"description": "",
 	"author": "",
 	"license": "MIT",
+	"private": true,
 	"scripts": {
-		"build": "tsc -p tsconfig.build.json",
-		"format": "prettier --write \"src/**/*.ts\"",
-		"start": "ts-node -r tsconfig-paths/register src/main.ts",
-		"start:dev": "nodemon",
-		"start:debug": "nodemon --config nodemon-debug.json",
-		"prestart:prod": "rimraf dist && npm run build",
-		"start:prod": "node dist/main.js",
-		"lint": "tslint -p tsconfig.json -c tslint.json",
+		"prebuild": "rimraf dist",
+		"build": "nest build",
+		"format": "prettier --write \"src/**/*.ts\" \"test/**/*.ts\"",
+		"start": "nest start",
+		"start:dev": "nest start --watch",
+		"start:debug": "nest start --debug --watch",
+		"start:prod": "node dist/main",
+		"lint": "eslint \"{src,apps,libs,test}/**/*.ts\" --fix",
 		"test": "jest",
 		"test:watch": "jest --watch",
 		"test:cov": "jest --coverage",
@@ -20,7 +21,6 @@
 		"test:e2e": "jest --config ./test/jest-e2e.json"
 	},
 	"dependencies": {
-		"bcrypt": "^5.1.0",
 		"@mapbox/node-pre-gyp": "^1.0.10",
 		"@nestjs/common": "^6.0.0",
 		"@nestjs/core": "^6.0.0",
@@ -29,6 +29,7 @@
 		"@nestjs/passport": "^6.1.0",
 		"@nestjs/platform-express": "^6.0.0",
 		"@nestjs/swagger": "^3.1.0",
+		"bcrypt": "^5.1.0",
 		"class-transformer": "^0.2.3",
 		"class-validator": "^0.9.1",
 		"cryptr": "^4.0.2",
@@ -46,6 +47,7 @@
 		"validator": "^11.1.0"
 	},
 	"devDependencies": {
+		"@nestjs/cli": "^9.0.0",
 		"@nestjs/testing": "^6.0.0",
 		"@types/bcrypt": "^3.0.0",
 		"@types/dotenv": "^6.1.1",
@@ -72,10 +74,13 @@
 			"ts"
 		],
 		"rootDir": "src",
-		"testRegex": ".spec.ts$",
+		"testRegex": ".*\\.spec\\.ts$",
 		"transform": {
 			"^.+\\.(t|j)s$": "ts-jest"
 		},
+		"collectCoverageFrom": [
+			"**/*.(t|j)s"
+		],
 		"coverageDirectory": "../coverage",
 		"testEnvironment": "node"
 	}
