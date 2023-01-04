@@ -21,6 +21,7 @@
 		"vercel-build": "yarn global add node-gyp"
 	},
 	"dependencies": {
+		"bcrypt": "^5.1.0",
 		"@mapbox/node-pre-gyp": "^1.0.10",
 		"@nestjs/common": "^6.0.0",
 		"@nestjs/core": "^6.0.0",
@@ -29,7 +30,6 @@
 		"@nestjs/passport": "^6.1.0",
 		"@nestjs/platform-express": "^6.0.0",
 		"@nestjs/swagger": "^3.1.0",
-		"bcrypt": "^3.0.6",
 		"class-transformer": "^0.2.3",
 		"class-validator": "^0.9.1",
 		"cryptr": "^4.0.2",
