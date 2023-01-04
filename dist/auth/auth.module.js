@@ -12,7 +12,7 @@ const jwt_strategy_1 = require("./strategies/jwt.strategy");
 const passport_1 = require("@nestjs/passport");
 const jwt_1 = require("@nestjs/jwt");
 const mongoose_1 = require("@nestjs/mongoose");
-const user_schema_1 = require("src/user/schemas/user.schema");
+const user_schema_1 = require("../user/schemas/user.schema");
 const refresh_token_schema_1 = require("./schemas/refresh-token.schema");
 let AuthModule = class AuthModule {
 };

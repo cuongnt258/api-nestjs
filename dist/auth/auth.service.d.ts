@@ -1,7 +1,7 @@
 import { JwtPayload } from './interfaces/jwt-payload.interface';
 import { JwtService } from '@nestjs/jwt';
 import { Model } from 'mongoose';
-import { User } from 'src/user/interfaces/user.interface';
+import { User } from '../user/interfaces/user.interface';
 import { RefreshToken } from './interfaces/refresh-token.interface';
 import { Request } from 'express';
 export declare class AuthService {
