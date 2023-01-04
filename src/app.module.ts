@@ -7,7 +7,7 @@ import { AuthModule } from './auth/auth.module';
 import { ArticleModule } from './article/article.module';
 @Module({
   imports: [
-    MongooseModule.forRoot(process.env.MONGO_URI),
+    MongooseModule.forRoot(process.env.MONGO_URI, { useNewUrlParser: true }),
     UserModule,
     AuthModule,
     ArticleModule,
