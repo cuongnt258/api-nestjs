@@ -26,7 +26,7 @@ import {
   ApiImplicitHeader,
   ApiOperation,
 } from '@nestjs/swagger';
-import { RolesGuard } from 'src/auth/guards/roles.guard';
+import { RolesGuard } from '../auth/guards/roles.guard';
 
 @ApiUseTags('User')
 @Controller('user')
