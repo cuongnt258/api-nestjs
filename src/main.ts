@@ -13,9 +13,11 @@ async function bootstrap() {
   // ╦ ╦╔═╗╔═╗  ╔═╗╦  ╔═╗╔╗ ╔═╗╦    ╔═╗╦╔═╗╔═╗╔═╗
   // ║ ║╚═╗║╣   ║ ╦║  ║ ║╠╩╗╠═╣║    ╠═╝║╠═╝║╣ ╚═╗
   // ╚═╝╚═╝╚═╝  ╚═╝╩═╝╚═╝╚═╝╩ ╩╩═╝  ╩  ╩╩  ╚═╝╚═╝
-  app.useGlobalPipes(new ValidationPipe({
-    // disableErrorMessages: true,
-  }));
+  app.useGlobalPipes(
+    new ValidationPipe({
+      // disableErrorMessages: true,
+    }),
+  );
 
   // ╔═╗╦ ╦╔═╗╔═╗╔═╗╔═╗╦═╗
   // ╚═╗║║║╠═╣║ ╦║ ╦║╣ ╠╦╝
@@ -27,10 +29,7 @@ async function bootstrap() {
     .addTag('API')
     .build();
   const document = SwaggerModule.createDocument(app, options, {
-    include: [
-      UserModule,
-      ArticleModule,
-  ],
+    include: [UserModule, ArticleModule],
   });
   SwaggerModule.setup('api', app, document);
 

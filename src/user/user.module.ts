@@ -9,7 +9,9 @@ import { ForgotPasswordSchema } from './schemas/forgot-password.schema';
 @Module({
   imports: [
     MongooseModule.forFeature([{ name: 'User', schema: UserSchema }]),
-    MongooseModule.forFeature([{ name: 'ForgotPassword', schema: ForgotPasswordSchema}]),
+    MongooseModule.forFeature([
+      { name: 'ForgotPassword', schema: ForgotPasswordSchema },
+    ]),
     AuthModule,
   ],
   controllers: [UserController],
